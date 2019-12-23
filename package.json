@@ -1,0 +1,35 @@
+{
+  "name": "pikachoose",
+  "version": "1.0.0",
+  "description": "pokemon team builder",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1",
+    "mysql2": "^2.0.2",
+    "pokedex.js": "^2.4.2",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZanderMate/teamikea.git"
+  },
+  "keywords": [
+    "pokemon",
+    "team",
+    "builder",
+    "pokedex"
+  ],
+  "author": "zandermate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZanderMate/teamikea/issues"
+  },
+  "homepage": "https://github.com/ZanderMate/teamikea#readme"
+}
