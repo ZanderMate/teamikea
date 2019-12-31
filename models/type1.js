@@ -4,12 +4,12 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 
 // Creates a "Type" model that matches up with DB
-var Burger = sequelize.define("type", {
+var Burger = sequelize.define("type1", {
   type_name: Sequelize.STRING
 });
 
 // Syncs with DB
-Type.sync();
+Type1.sync();
 
 // Makes the Type Model available for other files (will also create a table)
-module.exports = Type;
+module.exports = Type1;
