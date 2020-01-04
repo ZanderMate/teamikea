@@ -13,19 +13,20 @@ CREATE TABLE pokemon (
     special_defense INT(10) NOT NULL,
     speed INT(10) NOT NULL,
     hitpoints INT(10) NOT NULL,
-    type1_id INT(10) NOT NULL,
-    type2_id INT(10),
+    type_index INT(10) NOT NULL,
+    on_team BOOLEAN NOT NULL,
     PRIMARY KEY(id)
 );
 
-CREATE TABLE type1 (
+CREATE TABLE type (
     id INT NOT NULL AUTO_INCREMENT,
     type_name VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
 );
 
-CREATE TABLE type2 (
+CREATE TABLE type_index (
     id INT NOT NULL AUTO_INCREMENT,
-    type_name VARCHAR(255) NOT NULL,
+    type_index INT(255) NOT NULL,
+    type_id INT(255) NOT NULL,
     PRIMARY KEY(id)
 );
