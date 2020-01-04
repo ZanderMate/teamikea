@@ -1,22 +1,22 @@
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-5 order">
-    <h2>Burger Bucket List:</h2>
+    <h2>Pokemon team  Creater:</h2>
     <ul class = "list">
-      {{#each burgers}}
-      {{#unless devoured}}
-      {{> burgers/burgers-block devoured=true}}
+      {{#each pokemon}}
+      {{#unless add}}
+      {{> pokemon/pokemon-block add=true}}
       {{/unless}}
       {{/each}}
     </ul>
   </div>
 
   <div class="col-md-5 eaten">
-    <h2>Burgers Devoured:</h2>
+    <h2>Pokemon Team</h2>
     <ul class = "list">
-      {{#each burgers}}
-      {{#if devoured}}
-      {{> burgers/burgers-block devoured=false}}
+      {{#each pokemon}}
+      {{#if add}}
+      {{> pokemon/pokemon-block add=false}}
       {{/if}}
       {{/each}}
     </ul>
@@ -30,12 +30,12 @@
     <form class="create-form">
 
       <div class="form-group">
-        <label for="ca">Burger Name:</label>
+        <label for="ca">pokemon</label>
         <input type="text" id="ca" name="name">
       </div>
 
-      <button class="submit" type="submit">Add Burger</button>
+      <button class="submit" type="submit">Add pokemon</button>
     </form>
-    <p>Enter a burger you want to add to your burger bucket list and click "Add Burger"</p>
+    <p>Select the pokemon you want to add to your pokemon team and click "Add pokemon"</p>
   </div>
 </div>
