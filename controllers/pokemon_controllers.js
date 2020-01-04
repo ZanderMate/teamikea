@@ -3,13 +3,13 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (burger.js) to use its database functions.
-var burgers = require("../models/burgers.js");
+var pokemon = require("../models/pokemon.js");
 
 // GET (read)
 router.get("/", function(req, res) {
-  burgers.selectAll(function(data) {
+  pokemon.selectAll(function(data) {
     var hbsObject = {
-      burgers: data
+      pokemon: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
@@ -17,30 +17,30 @@ router.get("/", function(req, res) {
 });
 
 //POST (create)
-router.post("/api/burgers", function(req, res) {
-  burgers.insertOne(req.body.burger_name, function(result) {
+router.post("/api/pokemon", function(req, res) {
+  pokemon.insertOne(req.body.pokemon_name, function(result) {
     res.json({ id: result.insertId });
   });
 });
 
 //PUT (update)
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/api/pokemon/:id", function(req, res) {
   var condition = req.params.id;
 
   console.log("condition", condition);
 
-  burgers.updateOne(condition, function(result) {
+  pokemon.updateOne(condition, function(result) {
     res.json(result);
   });
 });
 
 //PUT (update)
-router.put("/api/burgersTwo/:id", function(req, res) {
+router.put("/api/pokemonTwo/:id", function(req, res) {
   var condition = req.params.id;
 
   console.log("condition", condition);
 
-  burgers.updateTwo(condition, function(result) {
+  pokemon.updateTwo(condition, function(result) {
     res.json(result);
   });
 });
