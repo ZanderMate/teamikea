@@ -1,6 +1,36 @@
+.background {
+    background-color: #dc0a2d;
+}
+
 .container {
     text-align: center;
+}
+
+.pokedex {
+    background-color: #dc0a2d;
+    margin: auto;
+    padding: 30px;
+}
+
+.pokemon, .pokemon-stats {
+    height: 400px;
+    width: 100%;
+    border: 10px solid #ccc;
     font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    overflow: auto;
+    background-color: gray;
+}
+
+.pokedex-h2 {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.dpad-pic {
+    position: relative;
+    right: 50px;
+    top: 20px
 }
 
 .background {
@@ -19,23 +49,41 @@
     text-shadow: -5px 0 #004a94, 0 5px #004a94, 5px 0 #004a94, 0 -5px #004a94;
 }
 
+.pokedex-title {
+    font-family:'Francois One', sans-serif, Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: #ffcb08;
+    text-shadow: -5px 0 #004a94, 0 5px #004a94, 5px 0 #004a94, 0 -5px #004a94;
+}
+
 #pika-pic {
     width: 400px;
 }
 
-.all-btn {
-    background-color: #f62d13;
+.add-btn {
+    background-color:gold;
     color: whitesmoke;
-    position: relative;
-    top: -285px;
-    right: 100px;
+    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', cursive;  
 }
+
 
 .team-btn {
     background-color: #f62d13;
     color: whitesmoke;
     font-family: 'Press Start 2P', cursive;
     position: relative;
-    top: -210px;
-    left: 110px;
+    top: 20px;
+    font-family: 'Press Start 2P', cursive;
+
+}
+
+.view-team-btn {
+    background-color:black;
+    color: whitesmoke;
+    font-family: 'Press Start 2P', cursive;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-family: 'Press Start 2P', cursive;  
 }
