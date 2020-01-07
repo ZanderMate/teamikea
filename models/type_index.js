@@ -1,17 +1,13 @@
-//Dependencies
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
+module.exports = function (sequelize, DataTypes) {
+  // Creates a "Burger" model that matches up with DB
+  var TypeName = sequelize.define("type_index", {
+      type_index: DataTypes.STRING,
+      type_id: DataTypes.INTEGER
+  });
 
-// Creates a "Type" model that matches up with DB
-var TypeIndex = sequelize.define("type_index", {
-  type_index: Sequelize.INTEGER,
-  type_index: Sequelize.INTEGER,
-  typeid: Sequelize.INTEGER
-});
+  // Syncs with DB
+  TypeIndex.sync();
 
-// Syncs with DB
-TypeIndex.sync();
-
-// Makes the Type Model available for other files (will also create a table)
-module.exports = TypeIndex;
+  // Makes the Chirp Model available for other files (will also create a table)
+  return TypeIndex;
+}
