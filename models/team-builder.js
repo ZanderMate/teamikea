@@ -1,6 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
     // Creates a "Burger" model that matches up with DB
-    var TypeName = sequelize.define("teambuilder", {
+
+    var TeamBuilder = sequelize.define("teambuilder", {
         team_name: DataTypes.STRING,
         team_description: DataTypes.TEXT,
         pokemon_1: DataTypes.INTEGER,
