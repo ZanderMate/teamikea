@@ -1,0 +1,89 @@
+.background {
+    background-color: #dc0a2d;
+}
+
+.container {
+    text-align: center;
+}
+
+.pokedex {
+    background-color: #dc0a2d;
+    margin: auto;
+    padding: 30px;
+}
+
+.pokemon, .pokemon-stats {
+    height: 400px;
+    width: 100%;
+    border: 10px solid #ccc;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    overflow: auto;
+    background-color: gray;
+}
+
+.pokedex-h2 {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.dpad-pic {
+    position: relative;
+    right: 50px;
+    top: 20px
+}
+
+.background {
+    background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d843okx-eb13e8e4-0fa4-4fa9-968a-e0f36ff168de.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDg0M29reC1lYjEzZThlNC0wZmE0LTRmYTktOTY4YS1lMGYzNmZmMTY4ZGUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TIK_E5L8dTyBUk_dADA5WkLP8jSJMR7YGJG54KNAido);
+    background-size: 100%;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    margin: 20px;
+    font-family:'Francois One', sans-serif, Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #ffcb08;
+    text-shadow: -5px 0 #004a94, 0 5px #004a94, 5px 0 #004a94, 0 -5px #004a94;
+}
+
+.pokedex-title {
+    font-family:'Francois One', sans-serif, Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: #ffcb08;
+    text-shadow: -5px 0 #004a94, 0 5px #004a94, 5px 0 #004a94, 0 -5px #004a94;
+}
+
+#pika-pic {
+    width: 400px;
+}
+
+.add-btn {
+    background-color:gold;
+    color: whitesmoke;
+    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', cursive;  
+}
+
+
+.team-btn {
+    background-color: #f62d13;
+    color: whitesmoke;
+    font-family: 'Press Start 2P', cursive;
+    position: relative;
+    top: 20px;
+    font-family: 'Press Start 2P', cursive;
+
+}
+
+.view-team-btn {
+    background-color:black;
+    color: whitesmoke;
+    font-family: 'Press Start 2P', cursive;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-family: 'Press Start 2P', cursive;  
+}
