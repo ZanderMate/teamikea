@@ -12,7 +12,7 @@
     padding: 30px;
 }
 
-.pokemon, .pokemon-stats {
+.pokemon, .pokemon-stats, .teams, .team-stats {
     height: 400px;
     width: 100%;
     border: 10px solid #ccc;
@@ -78,7 +78,7 @@
 
 }
 
-.view-team-btn {
+.view-team-btn, .view-pokemon-btn {
     background-color:black;
     color: whitesmoke;
     font-family: 'Press Start 2P', cursive;
