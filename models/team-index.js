@@ -1,14 +1,13 @@
 module.exports = function (sequelize, DataTypes) {
     // Creates a "Burger" model that matches up with DB
-
-    var TeamBuilder = sequelize.define("teambuilder", {
-        team_name: DataTypes.STRING,
-        team_description: DataTypes.TEXT
+    var TeamIndex = sequelize.define("team_index", {
+        team_index: DataTypes.INTEGER,
+        pokemon_index: DataTypes.INTEGER
     });
 
     // Syncs with DB
-    TeamBuilder.sync();
+    TeamIndex.sync();
 
     // Makes the Chirp Model available for other files (will also create a table)
-    return TeamBuilder;
+    return TeamIndex;
 }
