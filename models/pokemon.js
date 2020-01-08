@@ -12,6 +12,22 @@ module.exports = function (sequelize, DataTypes) {
       type_index: DataTypes.INTEGER,
   });
 
+  Pokemon.associate = function (models) {
+    // Associating Band with Songs
+    // When an Band is deleted, also delete any associated Songs
+    Pokemon.hasMany(models.TypeIndex);
+  };
+
+  Pokemon.associate = function (models) {
+    // We're saying that a Song should belong to an Band
+    // A Song can't be created without an Band due to the foreign key constraint
+    Pokemon.belongsTo(models.TeamIndex, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   // Syncs with DB
   Pokemon.sync();
 
