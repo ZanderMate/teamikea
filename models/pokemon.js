@@ -1,4 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
+
   // Creates a "Burger" model that matches up with DB
   var Pokemon = sequelize.define("pokemon", {
       pokemon_name: DataTypes.STRING,
