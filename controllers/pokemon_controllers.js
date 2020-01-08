@@ -1,49 +1,73 @@
 var express = require("express");
-
+var path = require("path");
 var router = express.Router();
 
-// Import the model (burger.js) to use its database functions.
-var pokemon = require("../models/pokemon.js");
+// Import the models to use its database functions.
+var db = require("../models");
 
-// GET (read)
-router.get("/", function(req, res) {
-  pokemon.selectAll(function(data) {
-    var hbsObject = {
-      pokemon: data
-    };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
+
+module.exports = function () {
+
+  // GET (show all pokemon in list)
+  router.get("/api/pokemon/", function (req, res) {
+    db.Pokemon.findAll({})
+      .then(function (dbPokemon) {
+        res.json(dbPokemon);
+      })
+  })
+
+  //POST (create new team)
+  router.post("/api/teams/", function (req, res) {
+    console.log(req.body);
+    db.TeamBuilder.create({
+      team_name: req.body.name,
+      team_description: req.body.description
+    })
+      .then(function (dbTeam) {
+        res.json(dbTeam);
+      });
   });
-});
 
-//POST (create)
-router.post("/api/pokemon", function(req, res) {
-  pokemon.insertOne(req.body.pokemon_name, function(result) {
-    res.json({ id: result.insertId });
+  //POST (add new pokemon to a team)
+  router.post("/api/teams/", function (req, res) {
+    db.TeamIndex.create({
+      pokemon_id: req.body.pokemon,
+      team_index: req.body.team
+    })
+      .then(function (dbPokemon) {
+
+        res.json(dbPokemon);
+      })
   });
-});
 
-//PUT (update)
-router.put("/api/pokemon/:id", function(req, res) {
-  var condition = req.params.id;
-
-  console.log("condition", condition);
-
-  pokemon.updateOne(condition, function(result) {
-    res.json(result);
+  //DELETE (delete a team)
+  router.delete("api/team/:id", function (req, res) {
+    db.TeamBuilder.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (dbTeam) {
+        res.json(dbTeam);
+      })
   });
-});
 
-//PUT (update)
-router.put("/api/pokemonTwo/:id", function(req, res) {
-  var condition = req.params.id;
-
-  console.log("condition", condition);
-
-  pokemon.updateTwo(condition, function(result) {
-    res.json(result);
+  //HTML route for root page
+  router.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/"));
   });
-});
+
+  //HTML route for team page
+  router.get("/teams", function (req, res) {
+    res.render("", teams[0]);
+  });
+
+  //HTML route for pokedex
+  router.get("/pokemon", function (req, res) {
+    res.render("", pokemon[0]);
+  });
+
+}
 
 // Export routes for server.js to use.
 module.exports = router;
