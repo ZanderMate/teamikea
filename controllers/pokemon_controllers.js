@@ -1,13 +1,14 @@
 var express = require("express");
-
+var path = require("path");
 var router = express.Router();
-let pokemonNumber = 0;
 
-// Import the model (burger.js) to use its database functions.
+// Import the models to use its database functions.
 var db = require("../models");
 
-// GET (read)
+
 module.exports = function () {
+
+  // GET (show all pokemon in list)
   router.get("/api/pokemon/", function (req, res) {
     db.Pokemon.findAll({})
       .then(function (dbPokemon) {
@@ -49,7 +50,23 @@ module.exports = function () {
       .then(function (dbTeam) {
         res.json(dbTeam);
       })
-  })
+  });
+
+  //HTML route for root page
+  router.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/"));
+  });
+
+  //HTML route for team page
+  router.get("/teams", function (req, res) {
+    res.render("", teams[0]);
+  });
+
+  //HTML route for pokedex
+  router.get("/pokemon", function (req, res) {
+    res.render("", pokemon[0]);
+  });
+
 }
 
 // Export routes for server.js to use.

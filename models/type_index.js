@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
   // Creates a "Burger" model that matches up with DB
-  var TypeName = sequelize.define("type_index", {
+  var TypeIndex = sequelize.define("type_index", {
       type_index: DataTypes.STRING,
       type_id: DataTypes.INTEGER
   });
