@@ -54,17 +54,22 @@ module.exports = function () {
 
   //HTML route for root page
   router.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/"));
+    res.sendFile(path.join(__dirname, "../public/assets/html/index.html"));
   });
+
+  //HTML route for add team form
+  router.get("/add-team", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/"));
+  })
 
   //HTML route for team page
   router.get("/teams", function (req, res) {
-    res.render("", teams[0]);
+    res.render("team", teams[0]);
   });
 
   //HTML route for pokedex
   router.get("/pokemon", function (req, res) {
-    res.render("", pokemon[0]);
+    res.render("pokemon", pokemon[0]);
   });
 
 }

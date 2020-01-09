@@ -1,26 +1,24 @@
 module.exports = function (sequelize, DataTypes) {
 
-  // Creates a "Burger" model that matches up with DB
+  // Creates a "Pokemon" model that matches up with DB
   var Pokemon = sequelize.define("pokemon", {
-      pokemon_name: DataTypes.STRING,
-      physical_attack: DataTypes.INTEGER,
-      physical_defense: DataTypes.INTEGER,
-      special_attack: DataTypes.INTEGER,
-      special_defense: DataTypes.INTEGER,
-      speed: DataTypes.INTEGER,
-      hitpoints: DataTypes.INTEGER,
-      type_index: DataTypes.INTEGER,
+    pokemon_name: DataTypes.STRING,
+    physical_attack: DataTypes.INTEGER,
+    physical_defense: DataTypes.INTEGER,
+    special_attack: DataTypes.INTEGER,
+    special_defense: DataTypes.INTEGER,
+    speed: DataTypes.INTEGER,
+    hitpoints: DataTypes.INTEGER,
+    type_index: DataTypes.INTEGER,
   });
 
   Pokemon.associate = function (models) {
-    // Associating Band with Songs
-    // When an Band is deleted, also delete any associated Songs
+    // Associating Pokemon with Team Index
     Pokemon.hasMany(models.TypeIndex);
   };
 
   Pokemon.associate = function (models) {
-    // We're saying that a Song should belong to an Band
-    // A Song can't be created without an Band due to the foreign key constraint
+    // We're saying that a Pokemon should belong to an Team Index
     Pokemon.belongsTo(models.TeamIndex, {
       foreignKey: {
         allowNull: false
@@ -31,6 +29,6 @@ module.exports = function (sequelize, DataTypes) {
   // Syncs with DB
   Pokemon.sync();
 
-  // Makes the Chirp Model available for other files (will also create a table)
+  // Makes the Pokemon Model available for other files (will also create a table)
   return Pokemon;
 }

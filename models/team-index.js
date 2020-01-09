@@ -16,8 +16,7 @@ module.exports = function (sequelize, DataTypes) {
     };
 
     TeamIndex.associate = function (models) {
-        // Associating Band with Songs
-        // When an Band is deleted, also delete any associated Songs
+        // Associating Team Index with Pokemon
         TeamIndex.hasMany(models.Pokemon);
     };
 
