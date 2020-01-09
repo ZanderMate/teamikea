@@ -14,7 +14,6 @@ CREATE TABLE pokemon (
     speed INT(10) NOT NULL,
     hitpoints INT(10) NOT NULL,
     type_index INT(10) NOT NULL,
-    on_team BOOLEAN NOT NULL,
     PRIMARY KEY(id)
 );
 
