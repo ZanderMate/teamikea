@@ -33,11 +33,12 @@ CREATE TABLE type_index (
 CREATE TABLE teambuilder (
     id INT NOT NULL AUTO_INCREMENT,
     team_name VARCHAR(255) NOT NULL,
-    team_description VARCHAR(255)
-)
-
-CREATE TABLE team_index (
-    id INT NOT NULL AUTO_INCREMENT,
-    team_index INT(10) NOT NULL,
-    pokemon_index INT(10) NOT NULL
+    team_description VARCHAR(255),
+    pokemonid_1 INTEGER(10) NOT NULL,
+    pokemonid_2 INTEGER(10),
+    pokemonid_3 INTEGER(10),
+    pokemonid_4 INTEGER(10),
+    pokemonid_5 INTEGER(10),
+    pokemonid_6 INTEGER(10),
+    PRIMARY KEY(id)
 )

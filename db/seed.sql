@@ -18,7 +18,7 @@ VALUES ("Normal"),
 ("Dark"),
 ("Fairy");
 
-INSERT INTO pikachoose.type_index (type_index, typeid)
+INSERT INTO pikachoose.type_index (type_index, type_id)
 VALUES (1, 12),
 (1, 4),
 (2, 10),
@@ -84,7 +84,7 @@ VALUES (1, 12),
 (37, 4),
 (38, 18);
 
-INSERT INTO pikachoose.pokemon (pokemon_name, physical_attack, physical_defense, special_attack, special_defense, speed, hitpoints, type_index, on_team)
+INSERT INTO pikachoose.pokemon (pokemon_name, physical_attack, physical_defense, special_attack, special_defense, speed, hitpoints, type_index)
 VALUES
 ("Bulbasaur", 49, 49, 65, 65, 45, 45, 1),
 ("Ivysaur", 62, 63, 80, 80, 60, 60, 1),
@@ -103,7 +103,7 @@ VALUES
 ("Beedrill", 90, 40, 45, 80, 75, 65, 7),
 ("Pidgey", 45, 40, 35, 35, 56, 40, 8),
 ("Pidgeotto", 60, 55, 50, 50, 71, 63, 8),
-("Pidgeot", 80, 75, 70, 70, 101, 8),
+("Pidgeot", 80, 75, 70, 70, 101, 83, 8),
 ("Rattata", 56, 35, 25, 35, 72, 30, 9),
 ("Raticate", 81, 60, 50, 70, 97, 55, 9),
 ("Spearow", 60, 30, 31, 31, 70, 40, 8),
@@ -116,7 +116,7 @@ VALUES
 ("Sandslash", 100, 110, 45, 55, 65, 75, 12),
 ("Nidoran(female)", 47, 52, 40, 40, 41, 55, 10),
 ("Nidorina", 62, 67, 55, 55, 56, 70, 10),
-("Nidoqueen", 92, 87, 75, 85, 76, 90, 4, 13),
+("Nidoqueen", 92, 87, 75, 85, 76, 90, 13),
 ("Nidoran(male)", 57, 40, 40, 40, 50, 46, 10),
 ("Nidorino", 72, 57, 55, 55, 65, 61, 10),
 ("Nidoking", 102, 77, 85, 75, 85, 81, 13),
@@ -126,8 +126,8 @@ VALUES
 ("Ninetails", 76, 75, 81, 100, 100, 73, 2),
 ("Jigglypuff", 45, 20, 45, 25, 20, 115, 18),
 ("Wigglytuff", 70, 45, 85, 50, 45, 140, 18),
-("Zubat", 45, 35, 30, 40, 55, 40, 4, 25),
-("Golbat", 80, 70, 65, 75, 90, 75, 4, 25),
+("Zubat", 45, 35, 30, 40, 55, 40, 25),
+("Golbat", 80, 70, 65, 75, 90, 75, 25),
 ("Oddish", 50, 55, 75, 65, 30, 45, 1),
 ("Gloom", 65, 70, 85, 75, 40, 60, 1),
 ("Vileplume", 80, 85, 110, 90, 50, 75, 1),
@@ -196,8 +196,8 @@ VALUES
 ("Lickitung", 55, 75, 60, 75, 30, 90, 8),
 ("Koffing", 65, 95, 60, 45, 35, 40, 10),
 ("Weezing", 90, 120, 85, 70, 60, 65, 10),
-("Rhyhorn", 85, 95, 30, 30, 25, 80, 5, 28),
-("Rhydon", 130, 120, 45, 45, 40, 105, 5, 28),
+("Rhyhorn", 85, 95, 30, 30, 25, 80, 28),
+("Rhydon", 130, 120, 45, 45, 40, 105, 28),
 ("Chansey", 5, 5, 35, 105, 50, 250, 8),
 ("Tangela", 55, 115, 100, 40, 60, 65, 15),
 ("Kangaskhan", 95, 80, 40, 80, 90, 105, 8),
@@ -209,7 +209,7 @@ VALUES
 ("Starmie", 75, 85, 100, 85, 115, 60, 21),
 ("Mr. Mime", 45, 65, 100, 120, 90, 40, 29),
 ("Scyther", 110, 80, 55, 80, 105, 70, 6),
-("Jynx", 50, 35, 115, 95, 95, 65, 15, 33),
+("Jynx", 50, 35, 115, 95, 95, 65, 33),
 ("Electabuzz", 83, 57, 95, 85, 105, 65, 11),
 ("Magmar", 95, 57, 100, 85, 93, 65, 2),
 ("Pinsir", 125, 100, 55, 70, 85, 65, 5),

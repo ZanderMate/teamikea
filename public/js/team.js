@@ -30,7 +30,7 @@ $(document).ready(function () {
     // A function for creating an team. Calls getteams upon completion
     function upsertteam(teamData) {
       $.post("/api/teams", teamData)
-        .then(getteams);
+        .then(getTeams);
     }
   
     // Function for creating a new list row for teams
@@ -44,7 +44,7 @@ $(document).ready(function () {
         newTr.append("<td>0</td>");
       }
       newTr.append("<td><a href='/pokemon?team_id=" + teamData.id + "'>Go to pokemons</a></td>");
-      newTr.append("<td><a href='/cms?team_id=" + teamData.id + "'>Create a pokemon</a></td>");
+      newTr.append("<td><a href='/index?team_id=" + teamData.id + "'>Create a pokemon</a></td>");
       newTr.append("<td><a style='cursor:pointer;color:red' class='delete-team'>Delete team</a></td>");
       return newTr;
     }
