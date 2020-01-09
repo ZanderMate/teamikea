@@ -1,3 +1,5 @@
+{{!-- This Handlebars Page renders the "Teams" page, This is where all the teams are listed with the team stats and are able to be deleted --}}
+
 <body class="background">
     <div class="container pokedex">
         {{!-- Row for title --}}
@@ -45,6 +47,7 @@
                         {{!-- JS FILE TO RENDER THIS DIV WITH THE TEAM NAME --}}
                         <div class="render-team-name">
                             {{!-- TEAM NAME --}}
+                            {{!-- TEAM DESCRIPTION --}}
                         </div>
                         <br>
                         <div class="row">
@@ -214,14 +217,14 @@
                                     </div>
                                     {{!-- Bottom Row Buttons --}}
                                     <div class="row">
-                                        {{!-- NEED BUTTON FOR view-team-btn TO RENDER POKEMON.HANDLEBARS --}}
+                                        {{!-- NEED BUTTON FOR view-pokemon-btn TO RENDER POKEMON.HANDLEBARS --}}
                                         <div class="col-md-3"><button class="btn view-pokemon-btn">VIEW POKEMON</button>
                                         </div>
                                         <div class="col-md-1"></div>
                                         <div class="col-md-8">
                                             {{!-- NEED BUTTON FOR delete-team TO DELETE REQUEST from DB (Delete Team)--}}
                                             {{!-- JS FILE TO RENDER THIS DIV WITH THE SPECIFIC TEAM BUTTON (Data=id) --}}
-                                            <div class="delete-team">
+                                            <div class="render-delete-team">
                                                 {{!-- <button class="btn delete-team" data=id>DELETE TEAM</button> --}}
                                             </div>
                                         </div>
@@ -229,4 +232,7 @@
 
                                 </div>
                             </div>
+
+    {{!-- LINK TO teams.js file --}}
+    <script src="/assets/js/teams.js"></script>
 </body>

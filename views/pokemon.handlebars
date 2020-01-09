@@ -1,3 +1,5 @@
+{{!-- This Handlebars Page renders the "Pokemon" page, This is where all the pokemon are listed and are able to be added to teams --}}
+
 <body class="background">
     <div class="container pokedex">
          {{!-- Row for title --}}
@@ -43,8 +45,10 @@
                         <option value="{{id}}" name="team" id="{{id}}">{{team_name}}</option>
                         {{/each}}
                     </select>
-                    {{!-- BUTTON TO ADD POKEMON TO TEAM BASED ON SELECTED TEAM --}}
-                    <input type="button" id="choose-team" class="btn add-btn" name="choose-team" value="ADD TO TEAM" />
+                    {{!-- JS FILE TO RENDER THIS DIV WITH THE BUTTON TO ADD POKEMON TO TEAM BASED ON SELECTED TEAM --}}
+                    <div class="render-add-btn">
+                    {{!-- <input type="button" id="choose-team" class="btn add-btn" name="choose-team" value="ADD TO TEAM" /> --}}
+                </div>
                 </div>
             </div>
         </div>
@@ -60,4 +64,7 @@
 
     </div>
     </div>
+
+        {{!-- LINK TO pokemon.js file --}}
+    <script src="/assets/js/pokemon.js"></script>
 </body>
