@@ -1,41 +1,70 @@
-<div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-5 order">
-    <h2>Pokemon team  Creater:</h2>
-    <ul class = "list">
-      {{#each pokemon}}
-      {{#unless add}}
-      {{> pokemon/pokemon-block add=true}}
-      {{/unless}}
-      {{/each}}
-    </ul>
-  </div>
+{{!-- This Handlebars Page renders the "Pokemon" page, This is where all the pokemon are listed and are able to be added to teams --}}
 
-  <div class="col-md-5 eaten">
-    <h2>Pokemon Team</h2>
-    <ul class = "list">
-      {{#each pokemon}}
-      {{#if add}}
-      {{> pokemon/pokemon-block add=false}}
-      {{/if}}
-      {{/each}}
-    </ul>
-  </div>
-  <div class="col-md-1"></div>
-</div>
+<body class="background">
+    <div class="container pokedex">
+         {{!-- Row for title --}}
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="pokedex-title">PIKA-CHOOOOOSE!</h1>
+            </div>
+        </div>
+        <div class="row">
 
+            <div class="col-md-4">
+                <h2 class="pokedex-h2">POKEMON</h2>
 
-<div class="row">
-  <div class="col-md-12">
-    <form class="create-form">
+                {{!-- HANDLEBARS RENDERS ALL THE POKEMON BUTTONS --}}
+                {{!-- NEED EVENT LISTENER FOR "pokemon-btn" BUTTON --}}
+                <div class="pokemon">
+                    {{#each pokemon}}
+                    <button class="btn pokemon-btn" data="{{id}}">{{id}}. {{pokemon_name}}</button> <br>
+                    {{/each}}
+                </div>
 
-      <div class="form-group">
-        <label for="ca">pokemon</label>
-        <input type="text" id="ca" name="name">
-      </div>
+            </div>
+            <div class="col-md-8">
+                <h2 class="pokedex-h2">STATS</h2>
+                <div class="pokemon-stats">
+                    {{!-- JS FILE TO RENDER THIS DIV WITH THE POKEMON IFNORMATION --}}
+                    <div class="render-pokemon-stats">
+                        {{!-- DITTO<br>
+                    <img class="pokemon-sprite"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"><br>
+                    Hit Points:XX<br>
+                    Attack:XX<br>
+                    Defence:XX<br>
+                    Special Attack: XX<br>
+                    Special Defence: XX<br>
+                    Speed: XX<br> --}}
+                    </div>
 
-      <button class="submit" type="submit">Add pokemon</button>
-    </form>
-    <p>Select the pokemon you want to add to your pokemon team and click "Add pokemon"</p>
-  </div>
-</div>
+                    <br>
+                    {{!-- HANDLEBARS RENDERS ALL THE TEAM OPTIONS --}}
+                    <select>
+                        {{#each teambuilder}}
+                        <option value="{{id}}" name="team" id="{{id}}">{{team_name}}</option>
+                        {{/each}}
+                    </select>
+                    {{!-- JS FILE TO RENDER THIS DIV WITH THE BUTTON TO ADD POKEMON TO TEAM BASED ON SELECTED TEAM --}}
+                    <div class="render-add-btn">
+                    {{!-- <input type="button" id="choose-team" class="btn add-btn" name="choose-team" value="ADD TO TEAM" /> --}}
+                </div>
+                </div>
+            </div>
+        </div>
+        {{!-- Bottom Row Buttons --}}
+        <div class="row">
+            <div class="col-md-4">
+                {{!-- NEED BUTTON FOR view-team-btn TO RENDER TEAMS.HANDLEBARS --}}
+                <button class="btn view-team-btn">VIEW TEAMS</button>
+            </div>
+            <div class="col-md-8"></div>
+
+        </div>
+
+    </div>
+    </div>
+
+        {{!-- LINK TO pokemon.js file --}}
+    <script src="/assets/js/pokemon.js"></script>
+</body>
