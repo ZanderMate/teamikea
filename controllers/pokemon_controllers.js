@@ -10,7 +10,7 @@ module.exports = function () {
 
   // GET (show all pokemon in list)
   router.get("/api/pokemon/", function (req, res) {
-    db.Pokemon.findAll({})
+    db.Pokemon.query("SELECT pokemon.id, pokemon_name, physical_attack, physical_defense, special_attack, special_defense, hitpoints, speed, type_name FROM pikachoose.pokemon inner join type_index on type_index.pokemon_id = pokemon.type_id inner join type on type_index.type_id = type.id;")
       .then(function (dbPokemon) {
         res.json(dbPokemon);
       })
