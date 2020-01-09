@@ -1,41 +1,85 @@
-<div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-5 order">
-    <h2>Pokemon team  Creater:</h2>
-    <ul class = "list">
-      {{#each pokemon}}
-      {{#unless add}}
-      {{> pokemon/pokemon-block add=true}}
-      {{/unless}}
-      {{/each}}
-    </ul>
-  </div>
+<!-- This html file is the start of what will be pokemon.handlebars -->
 
-  <div class="col-md-5 eaten">
-    <h2>Pokemon Team</h2>
-    <ul class = "list">
-      {{#each pokemon}}
-      {{#if add}}
-      {{> pokemon/pokemon-block add=false}}
-      {{/if}}
-      {{/each}}
-    </ul>
-  </div>
-  <div class="col-md-1"></div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Pika Choooose!!!</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/assets/js/pokemon.js"></script>
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Francois+One|Press+Start+2P&display=swap" rel="stylesheet">
+</head>
 
-<div class="row">
-  <div class="col-md-12">
-    <form class="create-form">
+<body class="background">
+    <div class="container pokedex">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="pokedex-title">PIKA-CHOOOOOSE!</h1>
+            </div>
+        </div>
+        <div class="row">
 
-      <div class="form-group">
-        <label for="ca">pokemon</label>
-        <input type="text" id="ca" name="name">
-      </div>
+            <div class="col-md-4">
+                <h2 class="pokedex-h2">POKEMON</h2>
 
-      <button class="submit" type="submit">Add pokemon</button>
-    </form>
-    <p>Select the pokemon you want to add to your pokemon team and click "Add pokemon"</p>
-  </div>
-</div>
+                <div class="pokemon">
+                    <button class="btn pokemon-btn">POKEMON 1</button><br>
+                    <button class="btn pokemon-btn">POKEMON 2</button><br>
+                    <button class="btn pokemon-btn">POKEMON 3</button><br>
+                    <button class="btn pokemon-btn">POKEMON 4</button><br>
+                    <button class="btn pokemon-btn">POKEMON 5</button><br>
+                    <button class="btn pokemon-btn">POKEMON 6</button><br>
+                    <button class="btn pokemon-btn">POKEMON 7</button><br>
+                    <button class="btn pokemon-btn">POKEMON 8</button><br>
+                    <button class="btn pokemon-btn">POKEMON 9</button><br>
+                    <button class="btn pokemon-btn">POKEMON 10</button><br>
+                    <button class="btn pokemon-btn">POKEMON 11</button><br>
+                    <button class="btn pokemon-btn">POKEMON 12</button><br>
+                    <button class="btn pokemon-btn">POKEMON 13</button><br>
+                    <button class="btn pokemon-btn">POKEMON 14</button><br>
+                    <button class="btn pokemon-btn">POKEMON 15</button><br>
+                    <button class="btn pokemon-btn">POKEMON 16</button><br>
+                    <button class="btn pokemon-btn">POKEMON 17</button><br>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h2 class="pokedex-h2">STATS</h2>
+                <div class="pokemon-stats">
+                    DITTO<br>
+                    <img class="pokemon-sprite"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"><br>
+                    Hit Points:XX<br>
+                    Attack:XX<br>
+                    Defence:XX<br>
+                    Special Attack: XX<br>
+                    Special Defence: XX<br>
+                    Speed: XX<br>
+                    <br>
+                    <select>
+                        <option value="volvo">TEAM 1</option>
+                        <option value="saab">TEAM 2</option>
+                        <option value="mercedes">TEAM 3</option>
+                        <option value="audi">TEAM 4</option>
+                    </select>
+                    <button class="btn add-btn">ADD TO TEAM</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn view-team-btn">VIEW TEAMS</button>
+            </div>
+            <div class="col-md-8"></div>
+
+        </div>
+
+    </div>
+    </div>
+</body>
+
+</html>
