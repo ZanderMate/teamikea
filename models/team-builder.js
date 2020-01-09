@@ -7,8 +7,8 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   TeamBuilder.associate = function (models) {
-    // Associating Band with Songs
-    // When an Band is deleted, also delete any associated Songs
+    // Associating Team Builder with Team Index
+    // When a Team is deleted, also delete any associated Team Index
     TeamBuilder.hasMany(models.TeamIndex, {
       onDelete: "cascade"
     });
