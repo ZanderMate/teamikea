@@ -1,24 +1,24 @@
 {
   "development": {
     "username": "root",
-    "password": "Kelley22!",
-    "database": "database_development",
+    "password": "Ywyktp1!$",
+    "database": "pikachoose",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
+    "password": "Ywyktp1!$",
+    "database": "pikachoose",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
+    "password": "Ywyktp1!$",
+    "database": "pikachoose",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
