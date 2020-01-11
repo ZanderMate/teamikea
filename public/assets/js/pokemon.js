@@ -23,7 +23,7 @@ $(function () {
                 var spDef = result[0].special_defense;
                 var spd = result[0].speed;
                 var iconURL = "http://img.pokemondb.net/sprites/black-white/anim/normal/" + pokemonName.toLowerCase() + ".gif"
-                console.log("Picture: ", iconURL);
+                console.log("ICON: ", iconURL);
 
                 $("#render-pokemon-stats")
                     .empty()
