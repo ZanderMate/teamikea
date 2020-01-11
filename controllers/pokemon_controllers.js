@@ -20,14 +20,22 @@ module.exports = function (app) {
     db.sequelize.query('SELECT * FROM pokemon where id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
       .then(function (dbPokemon) {
         console.log("dbPokemon", dbPokemon)
+
+        
         for (var i = 0; i <= dbPokemon.length; i++) {
           // GET (grab individual pokemon info)
           pokemon_id = dbPokemon[0].id;
+
+
+
           db.sequelize.query("select type_name from type_index inner join type on type_index.type_id = type.id inner join pokemon on type_index.pokemon_id = pokemon.type_id where pokemon.id = :id", { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
             .then(function (dbType) {
               console.log(dbType)
             })
         };
+
+
+
         res.json(dbPokemon);
       })
   });
@@ -100,7 +108,7 @@ module.exports = function (app) {
       var hbsObject = {
         teambuilder: results
       };
-      console.log(hbsObject)
+      // console.log(hbsObject)
       res.render("teams", hbsObject);
     })
   });
@@ -110,7 +118,7 @@ module.exports = function (app) {
       var hbsObject = {
         pokemon: results
       };
-      console.log(hbsObject)
+      // console.log(hbsObject)
       res.render("pokemon", hbsObject);
     })
   });
