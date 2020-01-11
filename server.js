@@ -21,8 +21,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/pokemon_controllers");
-app.use(routes);
+require("./controllers/pokemon_controllers")(app);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(function () {
