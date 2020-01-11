@@ -54,7 +54,7 @@ module.exports = function () {
 
   //HTML route for root page
   router.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/assets/html/index.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   //HTML route for add team form
