@@ -12,17 +12,22 @@ $(function () {
             url: "/api/pokemon/" + id
         }).then(
             function (result) {
-                var pokemonName = result.pokemon_name
-                var type = result.type_id
-                var hp = result.hit_points
-                var atk = result.physical_attack
-                var def = result.physical_defence
-                var spAtk = result.special_attack
-                var spDef = result.special_defence
-                var spd = result.speed
-                var iconURL = "http://img.pokemondb.net/sprites/black-white/anim/normal/" + pokemonName + ".gif"
+                console.log("result: ", result);
+                var pokemonName = result[0].pokemon_name;
+                console.log("This the pokemon_name: ", pokemonName);
+                var type = result[0].type_id;
+                var hp = result[0].hitpoints;
+                var atk = result[0].physical_attack;
+                var def = result[0].physical_defense;
+                var spAtk = result[0].special_attack;
+                var spDef = result[0].special_defense;
+                var spd = result[0].speed;
+                var iconURL = "http://img.pokemondb.net/sprites/black-white/anim/normal/" + pokemonName.toLowerCase() + ".gif"
+                console.log("Picture: ", iconURL);
 
-                $(".render-pokemon-stats").html = `
+                $("#render-pokemon-stats")
+                    .empty()
+                    .append(`
                     ${pokemonName}<br>
                     <img class="pokemon-sprite"
                         src="${iconURL}"><br>
@@ -32,15 +37,15 @@ $(function () {
                     Defence: ${def}<br>
                     Special Attack: ${spAtk}<br>
                     Special Defence: ${spDef}<br>
-                    Speed: ${spd}<br> `
+                    Speed: ${spd}<br> `)//end append
 
                 //RENDERS BUTTON TO ADD TO TEAM
                     $(".render-add-btn").html =
                     `<input type="button" id="choose-team" class="btn add-btn" name="choose-team" data= "${id}"value="ADD TO TEAM" />`
 
             }
-        )
-    })
+        )//end .then ajax call
+    })//on click function
 
 })
 
