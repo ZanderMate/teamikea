@@ -1,16 +1,22 @@
 {
   "development": {
     "username": "root",
-    "password": "Kelley22!",
-    "database": "database_development",
+    "password": "",
+    "database": "pikachoose",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": false,
+    "pool":{
+      "max": 5,
+      "min" : 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "pikachoose",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
@@ -18,7 +24,7 @@
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "pikachoose",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false

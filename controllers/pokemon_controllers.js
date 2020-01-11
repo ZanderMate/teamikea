@@ -4,7 +4,6 @@
 
 // Import the models to use its database functions.
 var db = require("../models");
-console.log(db);
 
 module.exports = function(app) {
 
@@ -18,21 +17,22 @@ module.exports = function(app) {
 
   // GET (grab individual pokemon info)
   app.get("/api/pokemon/:id", function (req, res) {
-    db.Pokemon.query("SELECT * FROM pikachoose.pokemon WHERE pokemon.id = ?;", req.params.id)
+
+    db.sequelize.query('SELECT * FROM pokemon where id = :id',{replacements:{id:req.params.id},type:db.sequelize.QueryTypes.SELECT})
     .then(function(dbPokemon) {
       console.log("dbPokemon",dbPokemon)
-      for (var i = 0; i <= dbPokemon.length; i++) {
-         // GET (grab individual pokemon info)
+      // for (var i = 0; i <= dbPokemon.length; i++) {
+      //    // GET (grab individual pokemon info)
         
-            db.Pokemon.query("Select type_name from type_index inner join type on type_index.type_id = type.id where type_index.pokemon_id = ?;", req.params.id)
-            .then(function(dbType) {
-              console.log("type", dbType);
-             // dbPokemon.push()
+      //       db.Pokemon.query("Select type_name from type_index inner join type on type_index.type_id = type.id where type_index.pokemon_id = ?;", req.params.id)
+      //       .then(function(dbType) {
+      //         console.log("type", dbType);
+      //        dbPokemon.push()
 
-            })
+      //       })
         
-
-      };
+      res.json(dbPokemon);
+      // };
     })
   })
 
@@ -83,13 +83,24 @@ module.exports = function(app) {
   })
 
   //HTML route for team page
-  app.get("/teams", function (req, res) {
-    res.render("team", teams[0]);
+  app.get("/teams", function(req,res){
+    db.TeamBuilder.findAll({}).then(function(results) {
+      var hbsObject = {
+        teambuilder: results
+      };
+      console.log(hbsObject)
+      res.render("teams", hbsObject);
+    })
   });
-
   //HTML route for pokedex
-  app.get("/pokemon", function (req, res) {
-    res.render("pokemon", pokemon[0]);
+  app.get("/pokemon", function(req, res) {
+    db.Pokemon.findAll({}).then(function(results) {
+      var hbsObject = {
+        pokemon: results
+      };
+      console.log(hbsObject)
+      res.render("pokemon", hbsObject);
+    })
   });
 
 }
