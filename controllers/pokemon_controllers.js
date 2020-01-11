@@ -1,5 +1,5 @@
 // var express = require("express");
-// var path = require("path");
+var path = require("path");
 // var router = express.Router();
 
 // Import the models to use its database functions.
@@ -78,13 +78,13 @@ module.exports = function(app) {
   });
 
   //HTML route for add team form
-  app.get("/add-team.html", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/"));
+  app.get("/add", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/add-team.html"));
   })
 
   //HTML route for team page
   app.get("/teams", function(req,res){
-    db.TeamBuilder.findAll({}).then(function(results) {
+    db.Teambuilder.findAll({}).then(function(results) {
       var hbsObject = {
         teambuilder: results
       };
