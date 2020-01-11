@@ -1,38 +1,238 @@
-<div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-5 order">
-    <h2>Pokemon team  Creater:</h2>
-    <ul class = "list">
-      {{#each pokemon}}
+{{!-- This Handlebars Page renders the "Teams" page, This is where all the teams are listed with the team stats and are able to be deleted --}}
 
-      {{/each}}
-    </ul>
-  </div>
+<body class="background">
+    <div class="container pokedex">
+        {{!-- Row for title --}}
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="pokedex-title">PIKA-CHOOOOOSE!</h1>
+            </div>
+        </div>
 
-  <div class="col-md-5 eaten">
-    <h2>Pokemon Team</h2>
-    <ul class = "list">
-      {{#each pokemon}}
-      
-      
-      {{/each}}
-    </ul>
-  </div>
-  <div class="col-md-1"></div>
-</div>
+        {{!-- Start of Team Info on left-hand side of page --}}
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        {{!-- HANDLEBARS RENDERS ALL THE TEAM BUTTONS --}}
+                        {{!-- NEED EVENT LISTENER FOR "teams-btn" BUTTON --}}
+                        <h2 class="pokedex-h2">TEAMS</h2>
+                        <div class="sm-team">
+                            {{#each teambuilder}}
+                            <button class="btn teams-btn" data="id"> {{team_name}} </button><br>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
 
+                        <br>
+                        <h2 class="pokedex-h2">STATS</h2>
+                        <div class="sm-team">
+                            {{!-- JS FILE TO RENDER THIS DIV WITH THE TEAM IFNORMATION --}}
+                            <div class="render-team-stats">
+                                {{!-- HP:XX <br>
+                            Attack:XX<br>
+                            Defence:XX<br>
+                            Sp Attack: XX<br>
+                            Sp Defence: XX<br>
+                            Speed: XX<br></div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-8">
+                    <h2 class="pokedex-h2">PARTY</h2>
+                    <div class="team-stats">
+                        {{!-- JS FILE TO RENDER THIS DIV WITH THE TEAM NAME --}}
+                        <div class="render-team-name">
+                            {{!-- TEAM NAME --}}
+                            {{!-- TEAM DESCRIPTION --}}
+                        </div>
+                        <br>
+                        <div class="row">
+                            {{!-- CARD FOR POKEMON 1 --}}
+                            <div class="col-md-4 flip-card">
+                                <div class="col-md-4 flip-card-inner">
+                                    <div class="flip-card-front">
+                                        {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 1 NAME, ICON, and TYPE --}}
+                                        <div class="render-pokemon1-icon-name-type">
+                                            {{!-- <img class="flip-card-img"
+                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+                                        alt="Pokemon-icon">
+                                    <p>Name: Ditto<br>
+                                        Type: Normal</p> --}}
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 1 STATS --}}
+                                        <div class="render-pokemon1-stats">
+                                            {{!-- <p>HP:<br>
+                                        ATK:<br>
+                                        def:<br>
+                                        SP ATK:<br>
+                                        SP def:<br>
+                                        SPD:</p>
+                                        </div> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                                {{!-- CARD FOR POKEMON 2 --}}
+                                <div class="col-md-4 flip-card">
+                                    <div class="col-md-4 flip-card-inner">
+                                        <div class="flip-card-front">
+                                            {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 2 NAME, ICON, and TYPE --}}
+                                            <div class="render-pokemon2-icon-name-type">
+                                                {{!-- <img class="flip-card-img"
+                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+                                        alt="Pokemon-icon">
+                                    <p>Name: Ditto<br>
+                                        Type: Normal</p> --}}
+                                            </div>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 2 STATS --}}
+                                            <div class="render-pokemon2-stats">
+                                                {{!-- <p>HP:<br>
+                                        ATK:<br>
+                                        def:<br>
+                                        SP ATK:<br>
+                                        SP def:<br>
+                                        SPD:</p>
+                                        </div> --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{!-- CARD FOR POKEMON 3 --}}
+                                    <div class="col-md-4 flip-card">
+                                        <div class="col-md-4 flip-card-inner">
+                                            <div class="flip-card-front">
+                                                {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 3 NAME, ICON, and TYPE --}}
+                                                <div class="render-pokemon3-icon-name-type">
+                                                    {{!-- <img class="flip-card-img"
+                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+                                        alt="Pokemon-icon">
+                                    <p>Name: Ditto<br>
+                                        Type: Normal</p> --}}
+                                                </div>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 3 STATS --}}
+                                                <div class="render-pokemon3-stats">
+                                                    {{!-- <p>HP:<br>
+                                        ATK:<br>
+                                        def:<br>
+                                        SP ATK:<br>
+                                        SP def:<br>
+                                        SPD:</p>
+                                        </div> --}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        {{!-- CARD FOR POKEMON 4 --}}
+                                        <div class="col-md-4 flip-card">
+                                            <div class="col-md-4 flip-card-inner">
+                                                <div class="flip-card-front">
+                                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 4 NAME, ICON, and TYPE --}}
+                                                    <div class="render-pokemon4-icon-name-type">
+                                                        {{!-- <img class="flip-card-img"
+                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+                                        alt="Pokemon-icon">
+                                    <p>Name: Ditto<br>
+                                        Type: Normal</p> --}}
+                                                    </div>
+                                                </div>
+                                                <div class="flip-card-back">
+                                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 4 STATS --}}
+                                                    <div class="render-pokemon4-stats">
+                                                        {{!-- <p>HP:<br>
+                                        ATK:<br>
+                                        def:<br>
+                                        SP ATK:<br>
+                                        SP def:<br>
+                                        SPD:</p>
+                                        </div> --}}
+                                                    </div>
+                                                </div>
+                                            </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <form class="create-form">
+                                            {{!-- CARD FOR POKEMON 5 --}}
+                                            <div class="col-md-4 flip-card">
+                                                <div class="col-md-4 flip-card-inner">
+                                                    <div class="flip-card-front">
+                                                        {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 5 NAME, ICON, and TYPE --}}
+                                                        <div class="render-pokemon5-icon-name-type">
+                                                            {{!-- <img class="flip-card-img"
+                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+                                        alt="Pokemon-icon">
+                                    <p>Name: Ditto<br>
+                                        Type: Normal</p> --}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="flip-card-back">
+                                                        {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 5 STATS --}}
+                                                        <div class="render-pokemon5-stats">
+                                                            {{!-- <p>HP:<br>
+                                        ATK:<br>
+                                        def:<br>
+                                        SP ATK:<br>
+                                        SP def:<br>
+                                        SPD:</p>
+                                        </div> --}}
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-      <div class="form-group">
-        <label for="ca">pokemon</label>
-        <input type="text" id="ca" name="name">
-      </div>
+                                                {{!-- CARD FOR POKEMON 6 --}}
+                                                <div class="col-md-4 flip-card">
+                                                    <div class="col-md-4 flip-card-inner">
+                                                        <div class="flip-card-front">
+                                                            {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 6 NAME, ICON, and TYPE --}}
+                                                            <div class="render-pokemon6-icon-name-type">
+                                                                {{!-- <img class="flip-card-img"
+                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+                                        alt="Pokemon-icon">
+                                    <p>Name: Ditto<br>
+                                        Type: Normal</p> --}}
+                                                            </div>
+                                                        </div>
+                                                        <div class="flip-card-back">
+                                                            {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 6 STATS --}}
+                                                            <div class="render-pokemon6-stats">
+                                                                {{!-- <p>HP:<br>
+                                        ATK:<br>
+                                        def:<br>
+                                        SP ATK:<br>
+                                        SP def:<br>
+                                        SPD:</p>
+                                        </div> --}}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{!-- Bottom Row Buttons --}}
+                                    <div class="row">
+                                        {{!-- NEED BUTTON FOR view-pokemon-btn TO RENDER POKEMON.HANDLEBARS --}}
+                                        <div class="col-md-3"><button class="btn view-pokemon-btn">VIEW POKEMON</button>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-8">
+                                            {{!-- NEED BUTTON FOR delete-team TO DELETE REQUEST from DB (Delete Team)--}}
+                                            {{!-- JS FILE TO RENDER THIS DIV WITH THE SPECIFIC TEAM BUTTON (Data=id) --}}
+                                            <div class="render-delete-team">
+                                                {{!-- <button class="btn delete-team" data=id>DELETE TEAM</button> --}}
+                                            </div>
+                                        </div>
+                                    </div>
 
-      <button class="submit" type="submit">Add pokemon</button>
-    </form>
-    <p>Select the pokemon you want to add to your pokemon team and click "Add pokemon"</p>
-  </div>
-</div>
+                                </div>
+                            </div>
+
+    {{!-- LINK TO teams.js file --}}
+    <script src="/assets/js/teams.js"></script>
+</body>
