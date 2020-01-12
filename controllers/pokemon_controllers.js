@@ -46,6 +46,7 @@ module.exports = function (app) {
       res.json(dbTeam);
     })
   })
+})
 
     //POST (create new team)
     app.post("/api/teams", function (req, res) {
