@@ -99,6 +99,11 @@
     position: relative;
     top: 10px;
     left: 10px;
+}
+
+.view-team-btn2 {
+    background-color:black;
+    color: whitesmoke;
     font-family: 'Press Start 2P', cursive;  
 }
 
