@@ -24,7 +24,7 @@ module.exports = function (app) {
   });
 
   app.get("/api/teams", function (req, res) {
-    db.sequelize.query('SELECT team_name, team_description, id FROM teambuilder', {type: db.sequelize.QueryTypes.SELECT})
+    db.sequelize.query('SELECT team_name, team_description, id FROM teambuilder', { type: db.sequelize.QueryTypes.SELECT })
       .then(function (dbTeam) {
         console.log(dbTeam);
         res.json(dbTeam);
@@ -38,34 +38,32 @@ module.exports = function (app) {
       })
 
 
-  app.get("/api/teams/:id", function(req, res) {
-    db.sequelize.query('SELECT * FROM pokemon inner join team_index ON team_index.pokemon_id = pokemon.id INNER JOIN teambuilder ON team_index.team_id = teambuilder.id  WHERE teambuilder.id = :id', {replacements: { id: req.params.id}, type: db.sequelize.QueryTypes.SELECT})
-
-    
-    .then(function(dbTeam) {
-      res.json(dbTeam);
+    app.get("/api/teams/:id", function (req, res) {
+      db.sequelize.query('SELECT * FROM pokemon inner join team_index ON team_index.pokemon_id = pokemon.id INNER JOIN teambuilder ON team_index.team_id = teambuilder.id  WHERE teambuilder.id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
+        .then(function (dbTeam) {
+          res.json(dbTeam);
+        })
     })
   })
 })
 
-    //POST (create new team)
-    app.post("/api/teams", function (req, res) {
-      console.log(req.body);
-      db.Teambuilder.create({
-        team_name: req.body.team_name,
-        team_description: req.body.team_description
-      })
-        .then(function (dbTeam) {
-          res.send(dbTeam);
-        });
-    });
+  //POST (create new team)
+  app.post("/api/teams", function (req, res) {
+    db.Teambuilder.create({
+      team_name: req.body.team_name
+    })
+      .then(function (dbTeam) {
+        res.send(dbTeam);
+      });
+  });
+
 
 
   //POST (add new pokemon to a team)
-  app.post("/api/teams", function (req, res) {
-    db.Team_Index.create({
-      pokemon_id: req.body.pokemon,
-      team_index: req.body.team
+  app.post("/api/team-members", function (req, res) {
+    db.Team_index.create({
+      pokemon_id: req.body.pokemon_id,
+      team_id: req.body.team_id
     })
       .then(function (dbPokemon) {
         res.json(dbPokemon);
@@ -115,5 +113,4 @@ module.exports = function (app) {
       res.render("pokemon", hbsObject);
     })
   });
-
 }
