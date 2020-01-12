@@ -17,25 +17,9 @@ module.exports = function (app) {
 
   // GET (grab individual pokemon info)
   app.get("/api/pokemon/:id", function (req, res) {
-    db.sequelize.query('SELECT * FROM pokemon where id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
+    db.sequelize.query('SELECT pokemon_name, hitpoints, speed, physical_attack, physical_defense, special_attack, special_defense, type_name FROM pokemon INNER JOIN type ON pokemon.type_id = type.id where pokemon.id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
       .then(function (dbPokemon) {
         console.log("dbPokemon", dbPokemon)
-
-        
-        for (var i = 0; i <= dbPokemon.length; i++) {
-          // GET (grab individual pokemon info)
-          pokemon_id = dbPokemon[0].id;
-
-
-
-          db.sequelize.query("select type_name from type_index inner join type on type_index.type_id = type.id inner join pokemon on type_index.pokemon_id = pokemon.type_id where pokemon.id = :id", { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
-            .then(function (dbType) {
-              console.log(dbType)
-            })
-        };
-
-
-
         res.json(dbPokemon);
       })
   });
@@ -48,11 +32,11 @@ module.exports = function (app) {
       });
   });
 
-  app.get("/api/teams/:id", function(req, res) {
-    db.sequelize.query('SELECT pokemon_name FROM pokemon inner join team_index ON team_index.team_id = teambuilder.id inner join pokemon on pokemon.id = team_index.pokemon where teambuilder.id = :id', {replacements: { id: req.params.id}, type: db.sequelize.QueryTypes.SELECT})
-    .then(function(dbTeam) {
-      res.json(dbTeam);
-    })
+  app.get("/api/teams/:id", function (req, res) {
+    db.sequelize.query('SELECT pokemon_name, physical_attack, physical_defense, special_attack, special_defense, hitpoints, speed FROM pokemon INNER JOIN team_index ON team_index.pokemon_id = pokemon.id INNER JOIN teambuilder ON teambuilder.id = team_index.team_id WHERE teambuilder.id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
+      .then(function (dbTeam) {
+        res.json(dbTeam);
+      })
   })
 
     //POST (create new team)
@@ -103,8 +87,8 @@ module.exports = function (app) {
   })
 
   //HTML route for team page
-  app.get("/teams", function(req,res){
-    db.Teambuilder.findAll({}).then(function(results) {
+  app.get("/teams", function (req, res) {
+    db.Teambuilder.findAll({}).then(function (results) {
       var hbsObject = {
         teambuilder: results
       };
@@ -113,8 +97,8 @@ module.exports = function (app) {
     })
   });
   //HTML route for pokedex
-  app.get("/pokemon", function(req, res) {
-    db.Pokemon.findAll({}).then(function(results) {
+  app.get("/pokemon", function (req, res) {
+    db.Pokemon.findAll({}).then(function (results) {
       var hbsObject = {
         pokemon: results
       };
