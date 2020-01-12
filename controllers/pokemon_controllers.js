@@ -16,7 +16,7 @@ module.exports = function (app) {
 
   // GET (grab individual pokemon info)
   app.get("/api/pokemon/:id", function (req, res) {
-    db.sequelize.query('SELECT * FROM pokemon where id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
+    db.sequelize.query('SELECT * FROM pokemon INNER JOIN type ON pokemon.type_id = type.id WHERE pokemon.id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
       .then(function (dbPokemon) {
         console.log("dbPokemon", dbPokemon)
         res.json(dbPokemon);
