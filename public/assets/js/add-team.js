@@ -1,11 +1,13 @@
 // Button listener to render team page
 $(".view-team-btn").on("click", function (event) {
+  event.preventDefault();
   document.location.href = "/teams"
 }
 );
 
 // Button listener to render pokemon page
 $(".view-pokemon-btn").on("click", function (event) {
+  event.preventDefault();
   document.location.href = "/pokemon"
 }
 );

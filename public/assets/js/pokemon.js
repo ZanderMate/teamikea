@@ -64,7 +64,7 @@ $(function () {
     });
         
     
-    $(".view-team-btn").on("click", function(event) {
+    $(".view-team-btn2").on("click", function(event) {
         document.location.href = "/teams"
         }
       );

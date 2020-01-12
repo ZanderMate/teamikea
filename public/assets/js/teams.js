@@ -14,76 +14,157 @@ $(function () {
         console.log(result)
         console.log(result[0].team_name)
         var teamName = result[0].team_name
-        var teamDescription = result[0].team_description
-        //TO DO - Add teamDescription to page somewhere
         $(".render-team-name").empty().append(teamName)
 
+        comHp = []
+        comSpeed = []
         comAtk = []
         comDef = []
+        comSpA = []
+        comSpD = []
+
 
         if (typeof result[0] !== "undefined") {
-          var pokemon1 = result[0].pokemon_name
-          var atk1 = result[0].physical_attack
-          var def1 = result[0].physical_defense
-          comAtk.push(atk1)
-          comDef.push(def1)
-          $(".render-pokemon1-icon-name-type").empty().append(pokemon1)
-          $(".render-pokemon1-stats").empty().append("Attack:" + atk1 + "<br>Defense:" + def1)
+          var pokemon = result[0].pokemon_name
+          var iconURL = "http://img.pokemondb.net/sprites/black-white/anim/normal/" + pokemon.toLowerCase() + ".gif"
+          var hp = result[0].hitpoints
+          var speed = result[0].speed
+          var atk = result[0].physical_attack
+          var def = result[0].physical_defense
+          var spatk = result[0].special_attack
+          var spdef = result[0].special_defense
+
+          comHp.push(hp)
+          comAtk.push(atk)
+          comDef.push(def)
+          comSpeed.push(speed)
+          comSpA.push(spatk)
+          comSpD.push(spdef)
+
+          $(".render-pokemon1-icon-name-type").empty().append(pokemon)
+          $(".render-pokemon1-icon-name-type").append(`<br><img class="pokemon-sprite" src="${iconURL}"><br>`)
+          $(".render-pokemon1-stats").empty().append("HP: " + hp + "<br>Speed: " + speed + "<br>Attack: " + atk + "<br>Defense: " + def + "<br>Sp Atk: " + spatk + "<br>Sp Def: " + spdef)
         }
+
         if (typeof result[1] !== "undefined") {
-          var pokemon2 = result[1].pokemon_name
-          var atk2 = result[1].physical_attack
-          var def2 = result[1].physical_defense
-          comAtk.push(atk2)
-          comDef.push(def2)
-          $(".render-pokemon2-icon-name-type").empty().append(pokemon2)
-          $(".render-pokemon2-stats").empty().append("Attack:" + atk2 + "<br>Defense:" + def2)
+          var pokemon = result[1].pokemon_name
+          var iconURL = "http://img.pokemondb.net/sprites/black-white/anim/normal/" + pokemon.toLowerCase() + ".gif"
+          var hp = result[1].hitpoints
+          var speed = result[1].speed
+          var atk = result[1].physical_attack
+          var def = result[1].physical_defense
+          var spatk = result[1].special_attack
+          var spdef = result[1].special_defense
+
+          comHp.push(hp)
+          comAtk.push(atk)
+          comDef.push(def)
+          comSpeed.push(speed)
+          comSpA.push(spatk)
+          comSpD.push(spdef)
+
+          $(".render-pokemon2-icon-name-type").empty().append(pokemon)
+          $(".render-pokemon2-icon-name-type").append(`<br><img class="pokemon-sprite" src="${iconURL}"><br>`)
+          $(".render-pokemon2-stats").empty().append("HP: " + hp + "<br>Speed: " + speed + "<br>Attack: " + atk + "<br>Defense: " + def + "<br>Sp Atk: " + spatk + "<br>Sp Def: " + spdef)
         }
         if (typeof result[2] !== "undefined") {
-          var pokemon3 = result[2].pokemon_name
-          var atk3 = result[2].physical_attack
-          var def3 = result[2].physical_defense
-          comAtk.push(atk3)
-          comDef.push(def3)
-          $(".render-pokemon3-icon-name-type").empty().append(pokemon3)
-          $(".render-pokemon3-stats").empty().append("Attack:" + atk3+ "<br>Defense:" + def3)
+          var pokemon = result[2].pokemon_name
+          var iconURL = "http://img.pokemondb.net/sprites/black-white/anim/normal/" + pokemon.toLowerCase() + ".gif"
+          var hp = result[2].hitpoints
+          var speed = result[2].speed
+          var atk = result[2].physical_attack
+          var def = result[2].physical_defense
+          var spatk = result[2].special_attack
+          var spdef = result[2].special_defense
+
+          comHp.push(hp)
+          comAtk.push(atk)
+          comDef.push(def)
+          comSpeed.push(speed)
+          comSpA.push(spatk)
+          comSpD.push(spdef)
+
+          $(".render-pokemon3-icon-name-type").empty().append(pokemon)
+          $(".render-pokemon3-icon-name-type").append(`<br><img class="pokemon-sprite" src="${iconURL}"><br>`)
+          $(".render-pokemon3-stats").empty().append("HP: " + hp + "<br>Speed: " + speed + "<br>Attack: " + atk + "<br>Defense: " + def + "<br>Sp Atk: " + spatk + "<br>Sp Def: " + spdef)
         }
         if (typeof result[3] !== "undefined") {
-          var pokemon4 = result[3].pokemon_name
-          var atk4 = result[3].physical_attack
-          var def4 = result[3].physical_defense
-          comAtk.push(atk4)
-          comDef.push(def4)
-          $(".render-pokemon4-icon-name-type").empty().append(pokemon4)
-          $(".render-pokemon4-stats").empty().append("Attack:" + atk4 + "<br>Defense:" + def4)
+          var pokemon = result[3].pokemon_name
+          var iconURL = "http://img.pokemondb.net/sprites/black-white/anim/normal/" + pokemon.toLowerCase() + ".gif"
+          var hp = result[3].hitpoints
+          var speed = result[3].speed
+          var atk = result[3].physical_attack
+          var def = result[3].physical_defense
+          var spatk = result[3].special_attack
+          var spdef = result[3].special_defense
+
+          comHp.push(hp)
+          comAtk.push(atk)
+          comDef.push(def)
+          comSpeed.push(speed)
+          comSpA.push(spatk)
+          comSpD.push(spdef)
+
+          $(".render-pokemon4-icon-name-type").empty().append(pokemon)
+          $(".render-pokemon4-icon-name-type").append(`<br><img class="pokemon-sprite" src="${iconURL}"><br>`)
+          $(".render-pokemon4-stats").empty().append("HP: " + hp + "<br>Speed: " + speed + "<br>Attack: " + atk + "<br>Defense: " + def + "<br>Sp Atk: " + spatk + "<br>Sp Def: " + spdef)
         }
         if (typeof result[4] !== "undefined") {
-          var pokemon5 = result[4].pokemon_name
-          var atk5 = result[4].physical_attack
-          var def5 = result[4].physical_defense
-          comAtk.push(atk5)
-          comDef.push(def5)
-          $(".render-pokemon5-icon-name-type").empty().append(pokemon5)
-          $(".render-pokemon5-stats").empty().append("Attack:" + atk5 + "<br>Defense:" + def5)
-        }
-        if (typeof result[5] !== "undefined") {
-          var pokemon6 = result[5].pokemon_name
-          var atk6 = result[5].physical_attack
-          var def6 = result[5].physical_defense
-          comAtk.push(atk6)
-          comDef.push(def6)
-          $(".render-pokemon6-icon-name-type").empty().append(pokemon6)
-          $(".render-pokemon6-stats").empty().append("Attack:" + atk6 + "<br>Defense:" + def6)
-        }
+          var pokemon = result[4].pokemon_name
+          var iconURL = "http://img.pokemondb.net/sprites/black-white/anim/normal/" + pokemon.toLowerCase() + ".gif"
+          var hp = result[4].hitpoints
+          var speed = result[4].speed
+          var atk = result[4].physical_attack
+          var def = result[4].physical_defense
+          var spatk = result[4].special_attack
+          var spdef = result[4].special_defense
 
+          comHp.push(hp)
+          comAtk.push(atk)
+          comDef.push(def)
+          comSpeed.push(speed)
+          comSpA.push(spatk)
+          comSpD.push(spdef)
         
-        var sumAtk = comAtk.reduce(function(a, b) { return a + b; }, 0);
-        var sumDef = comDef.reduce(function(a, b) { return a + b; }, 0);
+          $(".render-pokemon5-icon-name-type").empty().append(pokemon)
+          $(".render-pokemon5-icon-name-type").append(`<br><img class="pokemon-sprite" src="${iconURL}"><br>`)
+          $(".render-pokemon5-stats").empty().append("HP: " + hp + "<br>Speed: " + speed + "<br>Attack: " + atk + "<br>Defense: " + def + "<br>Sp Atk: " + spatk + "<br>Sp Def: " + spdef)
+        }
+          if (typeof result[5] !== "undefined") {
+            var pokemon = result[5].pokemon_name
+            var iconURL = "http://img.pokemondb.net/sprites/black-white/anim/normal/" + pokemon.toLowerCase() + ".gif"
+            var hp = result[5].hitpoints
+            var speed = result[5].speed
+            var atk = result[5].physical_attack
+            var def = result[5].physical_defense
+            var spatk = result[5].special_attack
+            var spdef = result[5].special_defense
 
-        $(".render-team-stats").empty().append("comb atk:" + sumAtk + "<br>comb def:" + sumDef)
-        // $(".render-delete-team").html = //Delete Team Button (data=teamid)
+            comHp.push(hp)
+            comAtk.push(atk)
+            comDef.push(def)
+            comSpeed.push(speed)
+            comSpA.push(spatk)
+            comSpD.push(spdef)
+          
+            $(".render-pokemon6-icon-name-type").empty().append(pokemon)
+            $(".render-pokemon6-icon-name-type").append(`<br><img class="pokemon-sprite" src="${iconURL}"><br>`)
+            $(".render-pokemon6-stats").empty().append("HP: " + hp + "<br>Speed: " + speed + "<br>Attack: " + atk + "<br>Defense: " + def + "<br>Sp Atk: " + spatk + "<br>Sp Def: " + spdef)
+          }
 
-      })
+
+          var sumAtk = comAtk.reduce(function (a, b) { return a + b; }, 0);
+          var sumDef = comDef.reduce(function (a, b) { return a + b; }, 0);
+          var sumSpD = comSpD.reduce(function (a, b) { return a + b; }, 0);
+          var sumSpA = comSpA.reduce(function (a, b) { return a + b; }, 0);
+          var sumHp = comHp.reduce(function (a, b) { return a + b; }, 0);
+          var sumSp = comSpeed.reduce(function (a, b) { return a + b; }, 0);
+
+          $(".render-team-stats").empty().append("Com HP :" + sumHp + "<br>Com Spd: " + sumSp + "<br>Com Atk: " + sumAtk + "<br>Com Def: " + sumDef + "<br>Com SpAtk: " + sumSpA + "<br>Com SpDef: " + sumSpD)
+        
+          // $(".render-delete-team").html = //Delete Team Button (data=teamid)
+
+        })
   })
 
   // // delete-team (button)
