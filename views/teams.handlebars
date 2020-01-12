@@ -1,25 +1,20 @@
-{{!-- This Handlebars Page renders the "Teams" page, This is where all the teams are listed with the team stats and are able to be deleted --}}
-
 <body class="background">
     <div class="container pokedex">
-        {{!-- Row for title --}}
         <div class="row">
             <div class="col-md-12">
                 <h1 class="pokedex-title">PIKA-CHOOOOOSE!</h1>
             </div>
         </div>
-
+    
         {{!-- Start of Team Info on left-hand side of page --}}
         <div class="row">
             <div class="col-md-3">
                 <div class="row">
                     <div class="col-md-12">
-                        {{!-- HANDLEBARS RENDERS ALL THE TEAM BUTTONS --}}
-                        {{!-- NEED EVENT LISTENER FOR "teams-btn" BUTTON --}}
                         <h2 class="pokedex-h2">TEAMS</h2>
                         <div class="sm-team">
                             {{#each teambuilder}}
-                            <button class="btn teams-btn" data="id"> {{team_name}} </button><br>
+                            <button class="btn teams-btn" data-id="{{id}}"> {{id}}. {{team_name}} </button><br>
                             {{/each}}
                         </div>
                     </div>
@@ -28,14 +23,8 @@
                         <br>
                         <h2 class="pokedex-h2">STATS</h2>
                         <div class="sm-team">
-                            {{!-- JS FILE TO RENDER THIS DIV WITH THE TEAM IFNORMATION --}}
                             <div class="render-team-stats">
-                                {{!-- HP:XX <br>
-                            Attack:XX<br>
-                            Defence:XX<br>
-                            Sp Attack: XX<br>
-                            Sp Defence: XX<br>
-                            Speed: XX<br></div> --}}
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -44,10 +33,7 @@
                 <div class="col-md-8">
                     <h2 class="pokedex-h2">PARTY</h2>
                     <div class="team-stats">
-                        {{!-- JS FILE TO RENDER THIS DIV WITH THE TEAM NAME --}}
                         <div class="render-team-name">
-                            {{!-- TEAM NAME --}}
-                            {{!-- TEAM DESCRIPTION --}}
                         </div>
                         <br>
                         <div class="row">
@@ -67,13 +53,13 @@
                                     <div class="flip-card-back">
                                         {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 1 STATS --}}
                                         <div class="render-pokemon1-stats">
-                                            {{!-- <p>HP:<br>
-                                        ATK:<br>
-                                        def:<br>
-                                        SP ATK:<br>
-                                        SP def:<br>
-                                        SPD:</p>
-                                        </div> --}}
+                                {{!-- HP:XX <br>
+                            Attack:XX<br>
+                            Defence:XX<br>
+                            Sp Attack: XX<br>
+                            Sp Defence: XX<br>
+                            Speed: XX<br> --}}
+                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -93,13 +79,13 @@
                                         <div class="flip-card-back">
                                             {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 2 STATS --}}
                                             <div class="render-pokemon2-stats">
-                                                {{!-- <p>HP:<br>
-                                        ATK:<br>
-                                        def:<br>
-                                        SP ATK:<br>
-                                        SP def:<br>
-                                        SPD:</p>
-                                        </div> --}}
+                                {{!-- HP:XX <br>
+                            Attack:XX<br>
+                            Defence:XX<br>
+                            Sp Attack: XX<br>
+                            Sp Defence: XX<br>
+                            Speed: XX<br> --}}
+                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -119,13 +105,13 @@
                                             <div class="flip-card-back">
                                                 {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 3 STATS --}}
                                                 <div class="render-pokemon3-stats">
-                                                    {{!-- <p>HP:<br>
-                                        ATK:<br>
-                                        def:<br>
-                                        SP ATK:<br>
-                                        SP def:<br>
-                                        SPD:</p>
-                                        </div> --}}
+                                {{!-- HP:XX <br>
+                            Attack:XX<br>
+                            Defence:XX<br>
+                            Sp Attack: XX<br>
+                            Sp Defence: XX<br>
+                            Speed: XX<br> --}}
+                            </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -147,13 +133,13 @@
                                                 <div class="flip-card-back">
                                                     {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 4 STATS --}}
                                                     <div class="render-pokemon4-stats">
-                                                        {{!-- <p>HP:<br>
-                                        ATK:<br>
-                                        def:<br>
-                                        SP ATK:<br>
-                                        SP def:<br>
-                                        SPD:</p>
-                                        </div> --}}
+                                {{!-- HP:XX <br>
+                            Attack:XX<br>
+                            Defence:XX<br>
+                            Sp Attack: XX<br>
+                            Sp Defence: XX<br>
+                            Speed: XX<br> --}}
+                            </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -174,13 +160,13 @@
                                                     <div class="flip-card-back">
                                                         {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 5 STATS --}}
                                                         <div class="render-pokemon5-stats">
-                                                            {{!-- <p>HP:<br>
-                                        ATK:<br>
-                                        def:<br>
-                                        SP ATK:<br>
-                                        SP def:<br>
-                                        SPD:</p>
-                                        </div> --}}
+                                {{!-- HP:XX <br>
+                            Attack:XX<br>
+                            Defence:XX<br>
+                            Sp Attack: XX<br>
+                            Sp Defence: XX<br>
+                            Speed: XX<br> --}}
+                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -201,13 +187,13 @@
                                                         <div class="flip-card-back">
                                                             {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 6 STATS --}}
                                                             <div class="render-pokemon6-stats">
-                                                                {{!-- <p>HP:<br>
-                                        ATK:<br>
-                                        def:<br>
-                                        SP ATK:<br>
-                                        SP def:<br>
-                                        SPD:</p>
-                                        </div> --}}
+                                 {{!-- HP:XX <br>
+                            Attack:XX<br>
+                            Defence:XX<br>
+                            Sp Attack: XX<br>
+                            Sp Defence: XX<br>
+                            Speed: XX<br> --}}
+                            </div>
                                                             </div>
                                                         </div>
                                                     </div>
