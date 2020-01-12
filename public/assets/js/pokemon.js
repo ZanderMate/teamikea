@@ -13,7 +13,7 @@ $(function () {
                 console.log("result: ", result);
                 var pokemonName = result[0].pokemon_name;
                 console.log("This the pokemon_name: ", pokemonName);
-                var type = result[0].type_id;
+                var type = result[0].type_name;
                 var hp = result[0].hitpoints;
                 var atk = result[0].physical_attack;
                 var def = result[0].physical_defense;
