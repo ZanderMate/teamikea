@@ -17,25 +17,9 @@ module.exports = function (app) {
 
   // GET (grab individual pokemon info)
   app.get("/api/pokemon/:id", function (req, res) {
-    db.sequelize.query('SELECT * FROM pokemon where id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
+    db.sequelize.query('SELECT * FROM pokemon INNER JOIN type ON pokemon.type_id = type.id WHERE pokemon.id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
       .then(function (dbPokemon) {
         console.log("dbPokemon", dbPokemon)
-
-        
-        for (var i = 0; i <= dbPokemon.length; i++) {
-          // GET (grab individual pokemon info)
-          pokemon_id = dbPokemon[0].id;
-
-
-
-          db.sequelize.query("select type_name from type_index inner join type on type_index.type_id = type.id inner join pokemon on type_index.pokemon_id = pokemon.type_id where pokemon.id = :id", { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
-            .then(function (dbType) {
-              console.log(dbType)
-            })
-        };
-
-
-
         res.json(dbPokemon);
       })
   });
