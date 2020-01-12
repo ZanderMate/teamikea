@@ -80,7 +80,7 @@
     background-color:gold;
     color: whitesmoke;
     font-family: 'Press Start 2P', cursive;
-    font-family: 'Press Start 2P', cursive;  
+
 }
 .team-btn {
     background-color: #f62d13;
@@ -99,6 +99,11 @@
     position: relative;
     top: 10px;
     left: 10px;
+}
+
+.view-team-btn2 {
+    background-color:black;
+    color: whitesmoke;
     font-family: 'Press Start 2P', cursive;  
 }
 
@@ -158,3 +163,20 @@
     transform: rotateY(180deg);
   }
 
+  .hidden {
+      display: none;
+  }
+
+  .pokemon-sprite {
+        width:90px;
+        height:90px;
+  }
+
+  .add-team-form {
+    color: whitesmoke;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .submit-btn {
+      background-color: gold
+  }

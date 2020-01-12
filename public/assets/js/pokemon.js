@@ -1,70 +1,72 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
-
 $(function () {
 
     $(".pokemon-btn").on("click", function (event) {
         var id = $(this).data("id");
-
-        // Send the GET request.
+        console.log(id)
+        console.log("You clicked!")
+        // Send the GET request
         $.ajax("/api/pokemon/" + id, {
             type: "GET",
             url: "/api/pokemon/" + id
         }).then(
             function (result) {
-                var pokemonName = result.pokemon_name
-                var type = result.type_id
-                var hp = result.hit_points
-                var atk = result.physical_attack
-                var def = result.physical_defence
-                var spAtk = result.special_attack
-                var spDef = result.special_defence
-                var spd = result.speed
-                var iconURL = result.icon//????? How to get icon
+                console.log("result: ", result);
+                var pokemonName = result[0].pokemon_name;
+                console.log("This the pokemon_name: ", pokemonName);
+                var type = result[0].type_name;
+                var hp = result[0].hitpoints;
+                var atk = result[0].physical_attack;
+                var def = result[0].physical_defense;
+                var spAtk = result[0].special_attack;
+                var spDef = result[0].special_defense;
+                var spd = result[0].speed;
+                var iconURL = "http://img.pokemondb.net/sprites/black-white/anim/normal/" + pokemonName.toLowerCase() + ".gif"
 
-                $(".render-pokemon-stats").html = `
-                    ${pokemonName}<br>
+                $("#render-pokemon-stats")
+                    .empty()
+                    .append(`
+                    <b>${pokemonName}</b><br>
                     <img class="pokemon-sprite"
                         src="${iconURL}"><br>
-                    Type: ${type}
+                    Type: ${type}<br>
                     Hit Points: ${hp}<br>
                     Attack: ${atk}<br>
                     Defence: ${def}<br>
                     Special Attack: ${spAtk}<br>
                     Special Defence: ${spDef}<br>
-                    Speed: ${spd}<br> `
-                //RENDERS BUTTON TO ADD TO TEAM
-                    $(".render-add-btn").html =
-                    `<input type="button" id="choose-team" class="btn add-btn" name="choose-team" data= "${id}"value="ADD TO TEAM" />`
+                    Speed: ${spd}<br>`) //end append
 
-            }
-        )
-    })
+                    $(".team-selection").removeClass("hidden")
 
-    //Button Listener to add pokemon to team (PUT REQUEST)
+                    $("#render-add-btn")
+                    .empty()
+                    .append(`
+                    <br>
+                    <input type="button" id="choose-team" class="btn add-btn" name="choose-team" data-pokemon=${id} value="ADD TO TEAM"/>`)
+            }) //end .then ajax call
+    }) //end on click function
+
+
+
+
     $(".add-btn").on("click", function(event) {
         var id = $(this).data("id");
-    // **********Not sure how to code this, need the id of the pokemon to be added to the team as well as the id of the team that will be added 
-    // var newPokemon = {
-    //     pokemon_id = id
-    //   };
-    //   $.ajax("/api/teams/" + id, {
-    //     type: "PUT",
-    //     data: newPokemon,
-    //     url: "/api/teams/" + id
-    //   }).then(
-    //     function() {
-    //       console.log("Pokemon has been added to the team");
-    //       location.reload();
+      $.ajax("/api/teams/" + id, {
+        type: "PUT",
+        data: newPokemon,
+        url: "/api/teams/" + id
+      }).then(
+        function() {
+          console.log("Pokemon has been added to the team");
+          location.reload();
         }
       );
     });
-        }
-      );
-
-    // Button listener to render team page
-    $(".view-team-btn").on("click", function(event) {
+        
+    
+    $(".view-team-btn2").on("click", function(event) {
         document.location.href = "/teams"
         }
       );
 
-})
+    })

@@ -16,6 +16,6 @@ module.exports = function (sequelize, DataTypes) {
   }
   );
 
-  // Makes the Pokemon Model available for other files (will also create a table)
+  // Makes the Pokemon model available for other files (will also create a table)
   return Pokemon;
 }

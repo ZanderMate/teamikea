@@ -1,11 +1,13 @@
 // Button listener to render team page
 $(".view-team-btn").on("click", function (event) {
+  event.preventDefault();
   document.location.href = "/teams"
 }
 );
 
 // Button listener to render pokemon page
 $(".view-pokemon-btn").on("click", function (event) {
+  event.preventDefault();
   document.location.href = "/pokemon"
 }
 );
@@ -15,8 +17,8 @@ $(".add-team-form").on("submit", function (event) {
   event.preventDefault();
 
   var newTeam = {
-    team_name: $("#name").val().trim(),
-    devoured: $("#description")
+    team_name: $("#team_name").val().trim(),
+    team_description: $("#team_description")
   };
 
   // Send the POST request.
