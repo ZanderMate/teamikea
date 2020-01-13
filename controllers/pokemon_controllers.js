@@ -45,7 +45,7 @@ module.exports = function (app) {
         })
     })
   })
-})
+
 
   //POST (create new team)
   app.post("/api/teams", function (req, res) {
