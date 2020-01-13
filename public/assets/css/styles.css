@@ -92,7 +92,7 @@
 
 }
 
-.view-team-btn, .view-pokemon-btn, .delete-team {
+.view-team-btn, .view-pokemon-btn, .delete-team, .team-btn3 {
     background-color:black;
     color: whitesmoke;
     font-family: 'Press Start 2P', cursive;
@@ -101,7 +101,7 @@
     left: 10px;
 }
 
-.view-team-btn2 {
+.view-team-btn2, {
     background-color:black;
     color: whitesmoke;
     font-family: 'Press Start 2P', cursive;  
