@@ -11,7 +11,7 @@ $(function () {
       url: "/api/teams/" + id
     }).then(
       function (result) {
-        console.log(result)
+        console.log("This is the result", result)
         console.log(result[0].team_name)
         var teamName = result[0].team_name
         $(".render-team-name").empty().append(teamName)

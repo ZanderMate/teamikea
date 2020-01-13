@@ -18,7 +18,6 @@ $(".add-team-form").on("submit", function (event) {
 
   var newTeam = {
     team_name: $("#team_name").val().trim(),
-    team_description: $("#team_description")
   };
 
   // Send the POST request.
