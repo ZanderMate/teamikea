@@ -189,4 +189,10 @@ $(function () {
     document.location.href = "/pokemon"
   }
   );
+
+  $(".team-btn3").on("click", function(event) {
+    document.location.href = "/add"
+    }
+  );
+
 });
