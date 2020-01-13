@@ -3,6 +3,7 @@
     text-align: center;
 }
 
+
 /* Class placed on container div (for pages we want the red outline/background) */
 .pokedex {
     background-color: #dc0a2d;
@@ -101,7 +102,7 @@
     left: 10px;
 }
 
-.view-team-btn2, {
+.view-team-btn2 {
     background-color:black;
     color: whitesmoke;
     font-family: 'Press Start 2P', cursive;  
