@@ -1,7 +1,10 @@
 # PikaChoose 
  
 ![Pikachu](public/assets/images/pika.png "Pikachu")
-[](https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif "Pikachu Sprite")
+
+[](https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif(25 kB)
+https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif
+ "Pikachu Sprite")
 
 ## Description
 
@@ -35,12 +38,13 @@ Start a team, enter in the name and description, then add pokemon. You can view 
 *Handlebars
 
 ## Tasks and roles
+
 Front-End: Kayla and Elizabeth
 Back-End: Issa and Alex
 
 ## Challenges
 
-*D*atabase and handlebars
+*Database and handlebars
 *api-routes
 
 ## Successes
@@ -55,7 +59,6 @@ Back-End: Issa and Alex
 
 *Cuteness Meter
 *More animation
-
-#### Here's the first steps to being a Pokemon Master
-
-[![Sounds of Glory](http://img.youtube.com/vi/6xKWiCMKKJg.jpg)](http://www.youtube.com/watch?v=6xKWiCMKKJg)
+*Delete teams
+*Adjust teams
+*Allow for more pokemone generations to be added
