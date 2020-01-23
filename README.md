@@ -69,8 +69,6 @@ Back-End: Issa and Alex
 ## Directions for the Future
 
 * More animation
-* Ability to Delete teams
 * Ability to Adjust teams
 * Add Search Function for Pokemon Page (Be able to search by name)
 * Add Sort Function for Pokemon Page (Be able to sort by stats)
-* Fix Bug to allow for Chosing which Team to Add Selected Pokemon To
