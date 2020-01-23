@@ -162,27 +162,27 @@ $(function () {
 
           $(".render-team-stats").empty().append("Com HP :" + sumHp + "<br>Com Spd: " + sumSp + "<br>Com Atk: " + sumAtk + "<br>Com Def: " + sumDef + "<br>Com SpAtk: " + sumSpA + "<br>Com SpDef: " + sumSpD)
         
-          // $(".render-delete-team").html = //Delete Team Button (data=teamid)
+          $(".delete-team").attr("data-id", id).show()
 
         })
   })
 
   // // delete-team (button)
-  // $(".delete-team").on("click", function(event) {
-  //     var id = $(this).data("id");
-
-  //     // Send the DELETE request.
-  //     $.ajax("/api/teams/" + id, {
-  //       type: "DELETE",
-  //       url: "/api/teams/" + id
-  //     }).then(
-  //       function() {
-  //         console.log("TEAM DELETED");
-  //         // Reload the page to get the updated list
-  //         location.reload();
-  //       }
-  //     );
-  //   });
+  $(".delete-team").on("click", function(event) {
+      var id = $(this).data("id");
+      console.log(id);
+      // Send the DELETE request.
+      $.ajax("/api/teams/" + id, {
+        type: "DELETE",
+        url: "/api/teams/" + id
+      }).then(
+        function() {
+          console.log("TEAM DELETED");
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    });
 
   // // view-pokemon button renders pokemon handlebars page
   $(".view-pokemon-btn").on("click", function (event) {

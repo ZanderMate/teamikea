@@ -33,7 +33,8 @@ module.exports = function (app) {
 
   app.get("/api/teams/:id", function (req, res) {
     db.sequelize.query(
-      'SELECT * FROM pokemon inner join team_index ON team_index.pokemon_id = pokemon.id INNER JOIN teambuilder ON team_index.team_id = teambuilder.id  WHERE teambuilder.id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT
+      'SELECT * FROM pokemon inner join team_index ON team_index.pokemon_id = pokemon.id INNER JOIN teambuilder ON team_index.team_id = teambuilder.id  WHERE teambuilder.id = :id', {
+      replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT
       // 'SELECT pokemon_name FROM pokemon inner join team_index ON team_index.team_id = teambuilder.id inner join pokemon on pokemon.id = team_index.pokemon where teambuilder.id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT }
     })
       .then(function (dbTeam) {
@@ -42,24 +43,12 @@ module.exports = function (app) {
   })
 
 
-    //POST (create new team)
-    app.post("/api/teams/", function (req, res) {
-      console.log(req.body);
-      db.Teambuilder.create({
-        team_name: req.body.team_name})      
-        .then(function (dbTeam) {
+  app.get("/api/teams/:id", function (req, res) {
+    db.sequelize.query('SELECT * FROM pokemon inner join team_index ON team_index.pokemon_id = pokemon.id INNER JOIN teambuilder ON team_index.team_id = teambuilder.id  WHERE teambuilder.id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
+      .then(function (dbTeam) {
         res.json(dbTeam);
       })
-
-
-    app.get("/api/teams/:id", function (req, res) {
-      db.sequelize.query('SELECT * FROM pokemon inner join team_index ON team_index.pokemon_id = pokemon.id INNER JOIN teambuilder ON team_index.team_id = teambuilder.id  WHERE teambuilder.id = :id', { replacements: { id: req.params.id }, type: db.sequelize.QueryTypes.SELECT })
-        .then(function (dbTeam) {
-          res.json(dbTeam);
-        })
-    })
   })
-
 
   //POST (create new team)
   app.post("/api/teams", function (req, res) {
@@ -85,7 +74,7 @@ module.exports = function (app) {
   });
 
   //DELETE (delete a team)
-  app.delete("api/team/:id", function (req, res) {
+  app.delete("/api/teams/:id", function (req, res) {
     db.Teambuilder.destroy({
       where: {
         id: req.params.id
@@ -119,12 +108,16 @@ module.exports = function (app) {
   });
   //HTML route for pokedex
   app.get("/pokemon", function (req, res) {
-    db.Pokemon.findAll({}).then(function (results) {
-      var hbsObject = {
-        pokemon: results
-      };
-      // console.log(hbsObject)
-      res.render("pokemon", hbsObject);
+    let hbsObject1;
+    let hbsObject2;
+    db.Pokemon.findAll({}).then(function (results1) {
+      db.Teambuilder.findAll({}).then(function (results2) {
+        hbsObject = {
+          pokemon: results1,
+          teambuilder: results2
+        };
+        res.render("pokemon", hbsObject);
+      })
     })
-  });
+  })
 }

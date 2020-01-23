@@ -14,7 +14,7 @@
                         <h2 class="pokedex-h2">TEAMS</h2>
                         <div class="sm-team">
                             {{#each teambuilder}}
-                            <button class="btn teams-btn" data-id="{{id}}"> {{id}}. {{team_name}} </button><br>
+                            <button class="btn teams-btn" data-id="{{id}}">{{team_name}} </button><br>
                             {{/each}}
                         </div>
                     </div>
@@ -141,6 +141,7 @@
             <div class="col-md-3"><button class="btn team-btn3" href="">ADD TEAM</button>
 </div><div class="col-md-1"></div>
                 <div class="col-md-8">
+                    <button class="btn delete-team hidden">DELETE TEAM</button>
                     <button class="btn view-pokemon-btn">VIEW ALL POKEMON</button>
                 </div>
                 <div class="render-delete-team">
