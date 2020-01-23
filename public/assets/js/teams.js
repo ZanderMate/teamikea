@@ -184,15 +184,5 @@ $(function () {
       );
     });
 
-  // // view-pokemon button renders pokemon handlebars page
-  $(".view-pokemon-btn").on("click", function (event) {
-    document.location.href = "/pokemon"
-  }
-  );
-
-  $(".team-btn3").on("click", function(event) {
-    document.location.href = "/add"
-    }
-  );
-
+ 
 });
