@@ -49,12 +49,13 @@ $(function () {
 
   $("#render-add-btn").click(function (event) {
     event.preventDefault();
-    console.log("Wheeee!");
     let pokemonID = $(this).children("input").data("id");
-    console.log(pokemonID);
+    let e = $(".team-selection");
+    console.log(e[0].options[e[0].options.selectedIndex].value);
+    let teamID = e[0].options[e[0].options.selectedIndex].value;
     let teamArray = {
       pokemon_id: pokemonID,
-      team_id: 1
+      team_id: teamID
     };
     console.log(teamArray);
     $.ajax("/api/team-members/", {
