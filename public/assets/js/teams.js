@@ -4,7 +4,6 @@ $(function() {
 
     $(".teams-btn").on("click", function(event) {
         var id = $(this).data("id");
-
         // Send the GET request.
         $.ajax("/api/teams/" + id, {
             type: "GET",
@@ -23,6 +22,19 @@ $(function() {
                 comSpA = []
                 comSpD = []
 
+                $(".render-pokemon1-icon-name-type").empty()
+                $(".render-pokemon2-icon-name-type").empty()
+                $(".render-pokemon3-icon-name-type").empty()
+                $(".render-pokemon4-icon-name-type").empty()
+                $(".render-pokemon5-icon-name-type").empty()
+                $(".render-pokemon6-icon-name-type").empty()
+
+                $(".render-pokemon1-stats").empty()
+                $(".render-pokemon2-stats").empty()
+                $(".render-pokemon3-stats").empty()
+                $(".render-pokemon4-stats").empty()
+                $(".render-pokemon5-stats").empty()
+                $(".render-pokemon6-stats").empty()
 
                 if (typeof result[0] !== "undefined") {
                     var pokemon = result[0].pokemon_name
