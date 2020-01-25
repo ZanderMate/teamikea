@@ -1,0 +1,158 @@
+<body class="background">
+    <div class="container pokedex">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="pokedex-title">PIKA-CHOOOOOSE!</h1>
+            </div>
+        </div>
+
+        {{!-- Start of Team Info on left-hand side of page --}}
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="pokedex-h2">TEAMS</h2>
+                        <div class="sm-team">
+                            {{#each teambuilder}}
+                            <button class="btn teams-btn" data-id="{{id}}"> {{id}}. {{team_name}} </button><br>
+                            {{/each}}
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <br>
+                            <h2 class="pokedex-h2">STATS</h2>
+                            <div class="sm-team">
+                                <div class="render-team-stats">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-8">
+                <h2 class="pokedex-h2">PARTY</h2><br>
+                <div class="team-stats">
+                    <div class="render-team-name">
+                    </div>
+                    <br>
+                    <div class="row">
+                        {{!-- CARD FOR POKEMON 1 --}}
+                        <div class="col-sm-4 flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 1 NAME, ICON, and TYPE --}}
+                                    <div class="render-pokemon1-icon-name-type">
+                                    </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 1 STATS --}}
+                                    <div class="render-pokemon1-stats">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{!-- CARD FOR POKEMON 2 --}}
+                        <div class="col-sm-4 flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 2 NAME, ICON, and TYPE --}}
+                                    <div class="render-pokemon2-icon-name-type">
+                                    </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 2 STATS --}}
+                                    <div class="render-pokemon2-stats">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{!-- CARD FOR POKEMON 3 --}}
+                        <div class="col-sm-4 flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 3 NAME, ICON, and TYPE --}}
+                                    <div class="render-pokemon3-icon-name-type">
+                                    </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 3 STATS --}}
+                                    <div class="render-pokemon3-stats">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {{!-- CARD FOR POKEMON 4 --}}
+                        <div class="col-sm-4 flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 4 NAME, ICON, and TYPE --}}
+                                    <div class="render-pokemon4-icon-name-type">
+                                    </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 4 STATS --}}
+                                    <div class="render-pokemon4-stats">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{!-- CARD FOR POKEMON 5 --}}
+                        <div class="col-sm-4 flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 5 NAME, ICON, and TYPE --}}
+                                    <div class="render-pokemon5-icon-name-type">
+                                    </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 5 STATS --}}
+                                    <div class="render-pokemon5-stats">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{!-- CARD FOR POKEMON 6 --}}
+                        <div class="col-sm-4 flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 6 NAME, ICON, and TYPE --}}
+                                    <div class="render-pokemon6-icon-name-type">
+                                    </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    {{!-- JS FILE TO RENDER THIS DIV WITH POKEMON 6 STATS --}}
+                                    <div class="render-pokemon6-stats">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{!-- Bottom Row Buttons --}}
+        <div class="row">
+            {{!-- NEED BUTTON FOR view-pokemon-btn TO RENDER POKEMON.HANDLEBARS --}}
+            <div class="col-sm-3"><button class="btn team-btn3" href="">ADD TEAM</button>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-8">
+                <button class="btn view-pokemon-btn">VIEW ALL POKEMON</button>
+            </div>
+            <div class="render-delete-team">
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+    {{!-- LINK TO teams.js file --}}
+    <script src="/assets/js/teams.js"></script>
+</body>
